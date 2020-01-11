@@ -7,16 +7,11 @@ using Xamarin.Forms;
 
 namespace BIM493_Project.ViewModels.Forms
 {
-    public class CompetitionDetailPageViewModel : ContentPage
+    public class CompetitionDetailPageViewModel : BaseViewModel
     {
         public CompetitionDetailPageViewModel()
         {
-            Content = new StackLayout
-            {
-                Children = {
-                    new Label { Text = "Welcome to Xamarin.Forms!" }
-                }
-            };
+            
         }
     }
 }
