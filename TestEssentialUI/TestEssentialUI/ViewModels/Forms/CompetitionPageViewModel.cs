@@ -2,21 +2,127 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using Xamarin.Forms;
+
 
 namespace BIM493_Project.ViewModels.Forms
 {
-    public class CompetitionPageViewModel : ContentPage
+    public class CompetitionPageViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        void OnPropertyChanged([CallerMemberName] string name = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+
+        string pertUserName1;
+        string pertUserName2;
+        string compName;
+        string targetNumber;
+        // ! date shoul check
+        DateTime dueDate;
+
+
+
+        #region Constructor
+
+        /// <summary>
+        /// Initializes a new instance for the <see cref="LoginPageViewModel" /> class.
+        /// </summary>
         public CompetitionPageViewModel()
         {
-            Content = new StackLayout
-            {
-                Children = {
-                    new Label { Text = "Welcome to Xamarin.Forms!" }
-                }
-            };
+            this.newCompCommand = new Command(this.newCompClickedDone);
+
         }
+
+        #endregion
+
+
+        #region property
+
+        
+        public string PertUserName1
+        {
+            get { return pertUserName1; }
+            set
+            {
+                pertUserName1 = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        public string PertUserName2
+        {
+            get { return pertUserName2; }
+            set
+            {
+                pertUserName2 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string CompName
+        {
+            get { return compName; }
+            set
+            {
+                compName = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string TargetNumber
+        {
+            get { return targetNumber; }
+            set
+            {
+                targetNumber = value;
+                OnPropertyChanged();
+            }
+        }
+        
+        public DateTime DueDate
+        {
+            get { return dueDate; }
+            set
+            {
+                dueDate = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+
+
+        #endregion
+
+        #region Command
+        public Command newCompCommand { get; set; }
+  
+
+
+        #endregion
+
+        #region methods
+
+        async private void newCompClickedDone(object obj)
+        {
+            // We need to save-send data here ?????
+
+
+            INavigation nav = Application.Current.MainPage.Navigation;
+            // Do something
+            await nav.PopAsync();
+            await nav.PushAsync(new Views.Forms.CompetitionDetail());
+
+        }
+
+
+        #endregion
     }
 }

@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="17.4.0.40" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="17.4.0.40" />
     <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="17.4.0.40" />
@@ -30,9 +34,6 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Forms\LoginPage.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Forms\MainPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Forms\SignUpPage.xaml">
       <Generator>MSBuild:Compile</Generator>

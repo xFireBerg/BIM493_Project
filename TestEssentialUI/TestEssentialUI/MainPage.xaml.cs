@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BIM493_Project.ViewModels.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace BIM493_Project
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new MainPageViewModel();
         }
     }
 }

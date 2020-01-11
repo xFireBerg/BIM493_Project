@@ -5,11 +5,50 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="BIM493_Project.Views.Forms.CompetitionPage">
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid VerticalOptions="FillAndExpand" Padding="0,20,0,20">
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Entry  
+                   Text="{Binding pertUserName1}"
+                   Placeholder="Perticipant 1"
+                   PlaceholderColor="#6c6e77"
+                   BackgroundColor="#474a55"
+                   TextColor="White"
+                   HeightRequest="50"/>
+                <Entry  
+                   Text="{Binding pertUserName2}"
+                   Placeholder="Perticipant 1"
+                   PlaceholderColor="#6c6e77"
+                   BackgroundColor="#474a55"
+                   TextColor="White"
+                   HeightRequest="50"/>
+                <Entry 
+                   Text="{Binding compName}"
+                   Placeholder="Competition Name"
+                   PlaceholderColor="#6c6e77"
+                   BackgroundColor="#474a55"
+                   TextColor="White"
+                   HeightRequest="50"/>
+                <Entry 
+                   Text="{Binding targetNumber}"
+                   Placeholder="Target Number"
+                   PlaceholderColor="#6c6e77"
+                   BackgroundColor="#474a55"
+                   TextColor="White"
+                   HeightRequest="50"/>
+                <DatePicker 
+                            Date="{Binding dueDate}" />
+                
+                <Button Text="DONE" 
+                    Command="{Binding newCompCommand}"
+                    BackgroundColor="#0bd38a"
+                    BorderRadius="1"
+                    BorderColor="Transparent"
+                    TextColor="White"
+                    HeightRequest="50"
+                    FontAttributes="Bold"/>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
