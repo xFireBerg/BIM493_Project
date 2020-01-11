@@ -7,16 +7,14 @@ using Xamarin.Forms;
 
 namespace BIM493_Project.Model
 {
-    public class CompetitionPageModel : ContentPage
+    public class CompetitionPageModel
     {
-        public CompetitionPageModel()
-        {
-            Content = new StackLayout
-            {
-                Children = {
-                    new Label { Text = "Welcome to Xamarin.Forms!" }
-                }
-            };
-        }
+      
+        public String CompetitionID { get; set; }
+        public String CompetitionName { get; set; }
+        public int Target { get; set; }
+        public DateTime DueDate { get; set; }
+        public String Participant1 { get; set; }
+        public String Participant2 { get; set; }
     }
 }
