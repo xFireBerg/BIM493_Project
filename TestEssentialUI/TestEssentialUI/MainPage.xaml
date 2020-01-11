@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              mc:Ignorable="d"
+             BackgroundColor="#5b5d68"
              x:Class="BIM493_Project.MainPage">
 
 
@@ -12,12 +13,29 @@
          <Label Text="{Binding CompID}"/>
        
          <Entry Text="{Binding CompID}" Placeholder="Enter CompetitionID"/>
-        <Button Text="Search" Command="{Binding searchCompCommand}"/>
+        <Button Text="Search"
+                            Command="{Binding searchCompCommand}"
+                            BackgroundColor="#0bd38a"
+                            BorderRadius="1"
+                            BorderColor="Transparent"
+                            TextColor="White"
+                            HeightRequest="50"
+                            VerticalOptions="End"
+                            Margin="0,0,0,30"
+                            FontAttributes="Bold"/>
     
         <ListView ItemsSource="{Binding CompList}"/>
         <Button           
-                            Margin="0,16"
+                            
                             Command="{Binding newCompCommand}"
-                            Text="New Competition" />
+                            Text="New Competition"
+                            BackgroundColor="#0bd38a"
+                            BorderRadius="1"
+                            BorderColor="Transparent"
+                            TextColor="White"
+                            HeightRequest="50"
+                            VerticalOptions="End"
+                            Margin="0,0,0,30"
+                            FontAttributes="Bold"/>
     </StackLayout>
 </ContentPage>

@@ -4,12 +4,89 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BackgroundColor="#5b5d68"
              x:Class="BIM493_Project.Views.Forms.UserPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <Label Grid.Row="0" Text="Reading Competition"
+                FontSize="Large"
+                TextColor="AntiqueWhite"
+                VerticalOptions="StartAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+            
+            
+            <Label Grid.Row="1" Text="%25" FontSize="Header" HorizontalOptions="CenterAndExpand" TextColor="LawnGreen" Margin="10,0"/>
+
+            <Grid Grid.Row="2" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label  Grid.Column="0" Text="Ahmet" FontSize="40" HorizontalOptions="StartAndExpand" TextColor="Red" Margin="5,0,30,0"/>
+                <ProgressBar Grid.Column="1" Progress="0.7" HeightRequest="21"  WidthRequest="500" ProgressColor="Red" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Grid>
+
+            <StackLayout Grid.Row="3" Orientation="Vertical">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Average : " TextColor="FloralWhite" FontSize="16" HorizontalOptions="StartAndExpand" Margin="5,0"/>
+                    <Label Grid.Column="1" Text="30" TextColor="FloralWhite" FontSize="16" HorizontalOptions="StartAndExpand" Margin="5,0"/>
+
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Daily : " TextColor="FloralWhite" FontSize="16" HorizontalOptions="StartAndExpand" Margin="5,0"/>
+                    <Label Grid.Column="1" Text="26" TextColor="FloralWhite" FontSize="16" HorizontalOptions="StartAndExpand" Margin="5,0"/>
+
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="ToReach : " TextColor="FloralWhite" FontSize="16" HorizontalOptions="StartAndExpand" Margin="5,0"/>
+                    <Label Grid.Column="1" Text="45" TextColor="FloralWhite" FontSize="16" HorizontalOptions="StartAndExpand" Margin="5,0"/>
+
+                </Grid>
+            </StackLayout>
+            
+            <ListView   x:Name="ForecastList" ItemsSource="{Binding Weathers}" SeparatorVisibility="None"
+                  Grid.Row="4" Margin="5,0" VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <ViewCell>
+                            <Frame  BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+                                <Grid HeightRequest="30" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Date}" TextColor="FloralWhite" FontSize="15" VerticalOptions="Center" Margin="20,0"/>
+                                    <Label Grid.Column="3" Text="{Binding Temp}" TextColor="FloralWhite" FontSize="15" FontAttributes="None" VerticalOptions="Center"/>
+                                    
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

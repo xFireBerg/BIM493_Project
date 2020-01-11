@@ -4,12 +4,58 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BackgroundColor="#5b5d68"
+             xmlns:viewModel="clr-namespace:BIM493_Project.ViewModels.Forms"
              x:Class="BIM493_Project.Views.Forms.CompetitionDetail">
+
+
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text=" YARIŞMA BAŞLADI TEBRİKLER !!!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="Reading Competition" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" TextColor="White" FontSize="Header"/>
+            <StackLayout Grid.Row="1" Orientation="Vertical" Margin="0,10" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Command="{Binding tempraryCommand}" Grid.Column="0" Text="Ahmet" FontSize="40" HorizontalOptions="StartAndExpand" TextColor="Red" Margin="0,0,30,0"/>
+                    <ProgressBar Grid.Column="1" Progress="0.7" HeightRequest="21"  WidthRequest="500" ProgressColor="Red" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <Label Grid.Column="2" Text="%25" FontSize="40" HorizontalOptions="StartAndExpand" TextColor="WhiteSmoke" Margin="10,0"/>
+                </Grid>
+
+                <Label Text="Average : 20" TextColor="White" FontSize="16" HorizontalOptions="StartAndExpand"/>
+                <Label Text="Daily : 40" TextColor="White" FontSize="16" HorizontalOptions="StartAndExpand"/>
+                <Label Text="ToReach : 70" TextColor="White" FontSize="16" HorizontalOptions="StartAndExpand"/>
+
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Orientation="Vertical" Margin="0,10" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Zabi" FontSize="40" HorizontalOptions="StartAndExpand" TextColor="GreenYellow" Margin="0,0,30,0"/>
+                    <ProgressBar Grid.Column="1" Progress="0.5" HeightRequest="21" WidthRequest="500" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" ProgressColor="WhiteSmoke"  />
+                    <Label Grid.Column="2" Text="%33" FontSize="40" HorizontalOptions="StartAndExpand" TextColor="WhiteSmoke" Margin="10,0"/>
+                    
+                </Grid>
+                <Label Text="Average : 20" TextColor="White" FontSize="16" HorizontalOptions="StartAndExpand"/>
+                <Label Text="Daily : 40" TextColor="White" FontSize="16" HorizontalOptions="StartAndExpand"/>
+                <Label Text="ToReach : 70" TextColor="White" FontSize="16" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+
+
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

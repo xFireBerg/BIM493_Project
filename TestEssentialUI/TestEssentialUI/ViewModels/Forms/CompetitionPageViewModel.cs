@@ -5,7 +5,8 @@ using System.Text;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
-
+using Windows.ApplicationModel.Contacts;
+using Android.Content.Res;
 
 namespace BIM493_Project.ViewModels.Forms
 {
@@ -36,6 +37,7 @@ namespace BIM493_Project.ViewModels.Forms
         public CompetitionPageViewModel()
         {
             this.newCompCommand = new Command(this.newCompClickedDone);
+            this.tempraryCommand = new Command(this.tempraryClicked);
 
         }
 
@@ -103,22 +105,39 @@ namespace BIM493_Project.ViewModels.Forms
 
         #region Command
         public Command newCompCommand { get; set; }
-  
+        public Command tempraryCommand { get; set; }
+        
+
 
 
         #endregion
 
         #region methods
 
-        async private void newCompClickedDone(object obj)
+async private void newCompClickedDone(object obj)
         {
             // We need to save-send data here ?????
 
 
             INavigation nav = Application.Current.MainPage.Navigation;
             // Do something
+
             await nav.PopAsync();
             await nav.PushAsync(new Views.Forms.CompetitionDetail());
+
+        }
+
+        // THİS İS JUST FOR TRY WE NEED TO CHANGE THİS
+        async private void tempraryClicked(object obj)
+        {
+            // We need to save-send data here ?????
+
+
+            INavigation nav = Application.Current.MainPage.Navigation;
+            // Do something
+
+            await nav.PopAsync();
+            await nav.PushAsync(new Views.Forms.UserPage());
 
         }
 

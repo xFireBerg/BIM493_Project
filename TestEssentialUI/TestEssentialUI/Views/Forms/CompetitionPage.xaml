@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BackgroundColor="#5b5d68"
              x:Class="BIM493_Project.Views.Forms.CompetitionPage">
 
     <ContentPage.Content>
@@ -37,18 +38,22 @@
                    BackgroundColor="#474a55"
                    TextColor="White"
                    HeightRequest="50"/>
-                <DatePicker 
-                            Date="{Binding dueDate}" />
+                <DatePicker
+                   HorizontalOptions="StartAndExpand"         
+                   Date="{Binding dueDate}" />
                 
-                <Button Text="DONE" 
+                
+            </StackLayout>
+            <Button Text="DONE" 
                     Command="{Binding newCompCommand}"
                     BackgroundColor="#0bd38a"
                     BorderRadius="1"
                     BorderColor="Transparent"
                     TextColor="White"
                     HeightRequest="50"
+                    VerticalOptions="End"
+                    Margin="0,0,0,30"
                     FontAttributes="Bold"/>
-            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
