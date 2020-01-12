@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Internals;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using BIM493_Project.Helper;
+using BIM493_Project.HelperUser;
 using BIM493_Project.Model;
 
 namespace BIM493_Project.ViewModels.Forms

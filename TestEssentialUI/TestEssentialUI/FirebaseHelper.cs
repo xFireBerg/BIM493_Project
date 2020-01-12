@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System;
-namespace BIM493_Project.Helper
+namespace BIM493_Project.HelperUser
 {
     public class FirebaseHelper
     {
@@ -61,5 +61,6 @@ namespace BIM493_Project.Helper
               .OnceAsync<CompetitionPageModel>();
             return allCompetitions.Where(a => a.CompetitionName == competitionName).FirstOrDefault();
         }
+
     }
 }

@@ -2,6 +2,9 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Essentials;
+using Firebase.Database;
+using BIM493_Project.HelperUser;
+using BIM493_Project.Model;
 namespace BIM493_Project.ViewModels.Forms
 {
     /// <summary>
@@ -11,7 +14,7 @@ namespace BIM493_Project.ViewModels.Forms
     public class LoginPageViewModel : LoginViewModel
     {
         #region Fields
-
+        private string name;
         private string password;
 
         #endregion
@@ -28,6 +31,8 @@ namespace BIM493_Project.ViewModels.Forms
             this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
             this.SocialMediaLoginCommand = new Command(this.SocialLoggedIn);
         }
+
+        FirebaseHelperUser firebaseHelperUser = new FirebaseHelperUser();
 
         #endregion
 
@@ -51,6 +56,25 @@ namespace BIM493_Project.ViewModels.Forms
                 }
 
                 this.password = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+
+            set
+            {
+                if (this.name == value)
+                {
+                    return;
+                }
+
+                this.name = value;
                 this.NotifyPropertyChanged();
             }
         }
@@ -92,12 +116,26 @@ namespace BIM493_Project.ViewModels.Forms
             // Do something
             Page page = Application.Current.MainPage;
             INavigation nav = page.Navigation;
-            try
-            {
-                if (Preferences.ContainsKey("email") && Preferences.Get("email", "") == Email && Preferences.ContainsKey("password") && Preferences.Get("password", "") == Password)
-                //if (emailEntered.Text == Preferences.Get(emailEntered.Text, "") && passwordEntered.Text == Preferences.Get(passwordEntered.Text, ""))
-                {
+            //try
+            //{
+            //    if (Preferences.ContainsKey("email") && Preferences.Get("email", "") == Email && Preferences.ContainsKey("password") && Preferences.Get("password", "") == Password)
+            //    //if (emailEntered.Text == Preferences.Get(emailEntered.Text, "") && passwordEntered.Text == Preferences.Get(passwordEntered.Text, ""))
+            //    {
 
+            //        if (await page.DisplayAlert("Login Process", "Username and password match", "Continue", "Cancel"))
+            //            await nav.PushAsync(new MainPage());
+            //    }
+            //    else
+            //        await page.DisplayAlert("Login Process", "Please make sure you have entered the right credentials.", "OK");
+            //}
+            //catch
+            //{
+            //    await page.DisplayAlert("Login Process", "Please fill in E-mail and Password fields", "OK");
+            //}
+            try {
+                var userCred = await firebaseHelperUser.GetUserCredentials(Name, Password);
+                if (userCred.UserName == Name && userCred.Password == Password)
+                {
                     if (await page.DisplayAlert("Login Process", "Username and password match", "Continue", "Cancel"))
                         await nav.PushAsync(new MainPage());
                 }
@@ -106,9 +144,9 @@ namespace BIM493_Project.ViewModels.Forms
             }
             catch
             {
-                await page.DisplayAlert("Login Process", "Please fill in E-mail and Password fields", "OK");
+                await page.DisplayAlert("Login Process", "Please make sure you have entered the right credentials.", "OK");
             }
-        }
+            }
 
         /// <summary>
         /// Invoked when the Sign Up button is clicked.
