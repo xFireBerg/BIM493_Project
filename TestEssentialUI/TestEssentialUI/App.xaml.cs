@@ -11,7 +11,7 @@ namespace BIM493_Project
             InitializeComponent();
 
             //MainPage = new MainPage();
-            MainPage = new NavigationPage (new BIM493_Project.Views.Forms.UserPage());
+            MainPage = new NavigationPage (new BIM493_Project.MainPage());
         }
 
         protected override void OnStart()

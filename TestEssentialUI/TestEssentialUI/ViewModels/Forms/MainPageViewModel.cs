@@ -40,10 +40,21 @@ namespace BIM493_Project.ViewModels.Forms
         #region property
 
         string name;
+        string id;
         public string CompID
         {
-            get { return  name; }
+            get { return  id; }
             set 
+            {
+                id = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        public string CompName
+        {
+            get { return name; }
+            set
             {
                 name = value;
                 this.NotifyPropertyChanged();
@@ -51,7 +62,7 @@ namespace BIM493_Project.ViewModels.Forms
         }
 
 
-        
+
         List<String> compList;
         public List<String> CompList
         {
@@ -78,6 +89,7 @@ namespace BIM493_Project.ViewModels.Forms
         {
             // SHOULD CHECK 
             INavigation nav = Application.Current.MainPage.Navigation;
+
             // Do something
             await nav.PopAsync();
             await nav.PushAsync(new Views.Forms.CompetitionPage());
@@ -87,17 +99,19 @@ namespace BIM493_Project.ViewModels.Forms
 
         async private void SeachCompClicked(object obj)
         {
-            var competition = await firebaseHelper.GetCompetition(obj.ToString());
+            
+            var competition = await firebaseHelper.GetCompetition(CompName.ToString());
             if (competition != null)
             {
-                CompID = competition.CompetitionID.ToString();
+                //CompID = competition.CompetitionID.ToString();
+                CompName = competition.CompetitionName.ToString();
               
-                //await DisplayAlert("Success", "Competition Retrieved Successfully", "OK");
+                await Application.Current.MainPage.DisplayAlert("Success", "Competition found", "OK");
 
             }
             else
             {
-                //await DisplayAlert("Error", "No Competition Available", "OK");
+                await Application.Current.MainPage.DisplayAlert("Error", "No competition with the name available", "OK");
             }
             //throw new NotImplementedException();
             

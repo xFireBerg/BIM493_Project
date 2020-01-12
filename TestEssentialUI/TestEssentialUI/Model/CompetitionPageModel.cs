@@ -11,7 +11,7 @@ namespace BIM493_Project.Model
     public class CompetitionPageModel
     {
       
-        public String CompetitionID { get; set; }
+        //public String CompetitionID { get; set; }
         public String CompetitionName { get; set; }
         public int Target { get; set; }
         public DateTime DueDate { get; set; }

@@ -5,6 +5,9 @@ using System.Text;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
+using Firebase.Database;
+using BIM493_Project.Helper;
+using BIM493_Project.Model;
 
 namespace BIM493_Project.ViewModels.Forms
 {
@@ -17,11 +20,12 @@ namespace BIM493_Project.ViewModels.Forms
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
+        FirebaseHelper firebaseHelper = new FirebaseHelper();
 
-        string pertUserName1;
-        string pertUserName2;
+        string partUserName1;
+        string partUserName2;
         string compName;
-        string targetNumber;
+        int targetNumber;
         // ! date shoul check
         DateTime dueDate;
 
@@ -45,23 +49,23 @@ namespace BIM493_Project.ViewModels.Forms
         #region property
 
         
-        public string PertUserName1
+        public string PartUserName1
         {
-            get { return pertUserName1; }
+            get { return partUserName1; }
             set
             {
-                pertUserName1 = value;
+                partUserName1 = value;
                 OnPropertyChanged();
             }
         }
 
 
-        public string PertUserName2
+        public string PartUserName2
         {
-            get { return pertUserName2; }
+            get { return partUserName2; }
             set
             {
-                pertUserName2 = value;
+                partUserName2 = value;
                 OnPropertyChanged();
             }
         }
@@ -76,7 +80,7 @@ namespace BIM493_Project.ViewModels.Forms
             }
         }
 
-        public string TargetNumber
+        public int TargetNumber
         {
             get { return targetNumber; }
             set
@@ -119,6 +123,15 @@ async private void newCompClickedDone(object obj)
 
             INavigation nav = Application.Current.MainPage.Navigation;
             // Do something
+
+            await firebaseHelper.AddCompetition(CompName, TargetNumber, DueDate, PartUserName1, PartUserName2);
+            //compName = string.Empty;
+            //targetNumber = 0;
+            //partUserName1 = string.Empty;
+            //partUserName2 = string.Empty;
+            await Application.Current.MainPage.DisplayAlert("Success", "Competition Added Successfully", "OK");
+            var allCompeitions = await firebaseHelper.GetAllCompetitions();
+            //lstPersons.ItemsSource = allCompeitions;
 
             await nav.PopAsync();
             await nav.PushAsync(new Views.Forms.CompetitionDetail());

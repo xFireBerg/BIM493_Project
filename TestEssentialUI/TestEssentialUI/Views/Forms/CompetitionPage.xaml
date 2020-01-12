@@ -12,8 +12,8 @@
             <StackLayout VerticalOptions="StartAndExpand">
                 <Label Text="Participant 1" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
                 <Entry  
-                   Text="{Binding pertUserName1}"
-                   Placeholder="Perticipant 1"
+                   Text="{Binding partUserName1}"
+                   Placeholder="Participant 1"
                    PlaceholderColor="#6c6e77"
                    BackgroundColor="#474a55"
                    TextColor="White"
@@ -21,8 +21,8 @@
 
                 <Label Text="Participant 2" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
                 <Entry  
-                   Text="{Binding pertUserName2}"
-                   Placeholder="Participant 1"
+                   Text="{Binding partUserName2}"
+                   Placeholder="Participant 2"
                    PlaceholderColor="#6c6e77"
                    BackgroundColor="#474a55"
                    TextColor="White"

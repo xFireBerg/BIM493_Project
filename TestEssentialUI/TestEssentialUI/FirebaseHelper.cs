@@ -19,7 +19,7 @@ namespace BIM493_Project.Helper
               .OnceAsync<CompetitionPageModel>()).Select(item => new CompetitionPageModel
               {
                   CompetitionName = item.Object.CompetitionName,
-                  CompetitionID = item.Object.CompetitionID,
+                  //CompetitionID = item.Object.CompetitionID,
                   Target = item.Object.Target,
                   DueDate = item.Object.DueDate,
                   Participant1 = item.Object.Participant1,
@@ -27,14 +27,14 @@ namespace BIM493_Project.Helper
               }).ToList();
         }
 
-        public async Task AddCompetition(string competitionID, string competitionName, int target,
+        public async Task AddCompetition(string competitionName, int target,
             DateTime dueDate, string participant1, string participant2 )
         {
             await firebase
-                .Child("Compeitions")
-                .PostAsync(new CompetitionPageModel()
+                .Child("Competitions")
+                .PostAsync(new CompetitionPageModel
                 {
-                    CompetitionID = competitionID,
+                    //CompetitionID = competitionID,
                     CompetitionName = competitionName,
                     Target = target,
                     DueDate = dueDate,
@@ -43,23 +43,23 @@ namespace BIM493_Project.Helper
                 });
         }
 
-        public async Task DeleteCompetition(string competitionID)
+        public async Task DeleteCompetition(string competitionName)
         {
             var toDeleteCompetition = (await firebase
               .Child("Competitions")
-              .OnceAsync<CompetitionPageModel>()).Where(a => a.Object.CompetitionID == competitionID).FirstOrDefault();
+              .OnceAsync<CompetitionPageModel>()).Where(a => a.Object.CompetitionName== competitionName).FirstOrDefault();
             await firebase.Child("Competitions").Child(toDeleteCompetition.Key).DeleteAsync();
 
         }
 
 
-        public async Task<CompetitionPageModel> GetCompetition(string competitionID)
+        public async Task<CompetitionPageModel> GetCompetition(string competitionName)
         {
             var allCompetitions = await GetAllCompetitions();
             await firebase
               .Child("Competitions")
               .OnceAsync<CompetitionPageModel>();
-            return allCompetitions.Where(a => a.CompetitionID == competitionID).FirstOrDefault();
+            return allCompetitions.Where(a => a.CompetitionName == competitionName).FirstOrDefault();
         }
     }
 }
