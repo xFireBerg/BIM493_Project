@@ -20,6 +20,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+         
             
             <Label Grid.Row="0" Text="Reading Competition"
                 FontSize="Large"
@@ -129,12 +130,12 @@
             
 
             <ListView x:Name="ForecastList" ItemsSource="{Binding Weathers}" SeparatorVisibility="None"
-                  Grid.Row="5" Margin="5,0" VerticalOptions="FillAndExpand" HeightRequest="150" MinimumWidthRequest="600" HorizontalOptions="StartAndExpand">
+                  Grid.Row="5" Margin="5,0" VerticalOptions="FillAndExpand" HeightRequest="151" WidthRequest="600" HorizontalOptions="CenterAndExpand" >
                 <ListView.ItemTemplate>
                     <DataTemplate >
                         <ViewCell>
                             <Frame BackgroundColor="#5b5d68"  BorderColor="SlateGray" Padding="5" Margin="0,0,0,5" HasShadow="False">
-                                <Grid HeightRequest="25" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                <Grid HeightRequest="25" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="Auto"/>

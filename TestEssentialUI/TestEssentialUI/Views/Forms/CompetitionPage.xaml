@@ -8,58 +8,78 @@
              x:Class="BIM493_Project.Views.Forms.CompetitionPage">
 
     <ContentPage.Content>
-        <Grid VerticalOptions="FillAndExpand" Padding="0,20,0,20">
-            <StackLayout VerticalOptions="StartAndExpand">
-                <Label Text="Participant 1" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
-                <Entry  
-                   Text="{Binding PartUserName1}"
-                   Placeholder="Participant 1"
-                   PlaceholderColor="#6c6e77"
-                   BackgroundColor="#474a55"
-                   TextColor="White"
-                   HeightRequest="30"/>
+        <Grid RowSpacing="5" VerticalOptions="CenterAndExpand">
 
-                <Label Text="Participant 2" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
-                <Entry  
-                   Text="{Binding PartUserName2}"
-                   Placeholder="Participant 2"
-                   PlaceholderColor="#6c6e77"
-                   BackgroundColor="#474a55"
-                   TextColor="White"
-                   HeightRequest="30"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-                <Label Text="Competition Name" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
+            <Label Grid.Row="0" Text="Participant 1" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
                 <Entry 
+                   Grid.Row="1"
+                   Text="{Binding PartUserName1}"
+                   Placeholder="Participant Username"
+                   PlaceholderColor="#6c6e77"
+                   BackgroundColor="#474a55"
+                   TextColor="White"
+                   />
+
+            <Label Grid.Row="2" Text="Participant 2" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
+                <Entry 
+                   Grid.Row="3"
+                   Text="{Binding PartUserName2}"
+                   Placeholder="Participant Username"
+                   PlaceholderColor="#6c6e77"
+                   BackgroundColor="#474a55"
+                   TextColor="White"
+                   Margin="5"/>
+            
+
+            <Label Grid.Row="4" Text="Competition Name" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
+                <Entry
+                   Grid.Row="5"
                    Text="{Binding CompName}"
                    Placeholder="Competition Name"
                    PlaceholderColor="#6c6e77"
                    BackgroundColor="#474a55"
                    TextColor="White"
-                   HeightRequest="30"/>
+                   Margin="5"/>
 
-                <Label Text="Target Number" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
+            <Label Grid.Row="6" Text="Target Number" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
                 <Entry 
+                   Grid.Row="7"
                    Text="{Binding TargetNumber}"
                    Placeholder="Target Number"
                    PlaceholderColor="#6c6e77"
                    BackgroundColor="#474a55"
                    TextColor="White"
-                   HeightRequest="30"/>
+                   Margin="5"/>
 
-                <Label Text="Due Date" TextColor="LightGray"  FontSize="Medium" FontAttributes="Bold" Margin="5"/>
+            <Label Grid.Row="8" Text="Due Date" TextColor="LightGray"  FontSize="Medium" FontAttributes="Bold" Margin="5"/>
                 <DatePicker
+                   Grid.Row="9"
+                   Margin="5"
                    HorizontalOptions="StartAndExpand"         
                    Date="{Binding DueDate}" />
-                
-                
-            </StackLayout>
-            <Button Text="DONE" 
+
+
+            <Button Grid.Row="10" Text="DONE" 
                     Command="{Binding newCompCommand}"
                     BackgroundColor="#0bd38a"
                     BorderRadius="1"
                     BorderColor="Transparent"
                     TextColor="White"
-                    HeightRequest="50"
+                    HeightRequest="51"
                     VerticalOptions="End"
                     Margin="0,0,0,30"
                     FontAttributes="Bold"/>
