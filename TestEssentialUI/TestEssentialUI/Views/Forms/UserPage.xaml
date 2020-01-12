@@ -84,40 +84,39 @@
             </Frame>
 
 
-            <StackLayout Grid.Row="4" Orientation="Vertical">
-                <Grid HeightRequest="35" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+            <StackLayout Grid.Row="4" Orientation="Vertical" >
+                <Grid HeightRequest="45" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="4*"/>
                         <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="3*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Text="Number :" TextColor="LightGray" FontSize="Small" HorizontalOptions="Start"/>
                     <Entry 
-                           Grid.Column="1"
+                           Grid.Column="0"
                            Text="{Binding WorkNumber}"
                            Placeholder="Number"
-                           PlaceholderColor="LightGray"
+                           PlaceholderColor="DarkGray"
                            TextColor="Black"
+                           Margin="10,0,0,0"
                            HeightRequest="30"/>
 
-                    <Label Grid.Column="2" Text="Date :" TextColor="LightGray" FontSize="Small" HorizontalOptions="Start"/>
+                    <Label Grid.Column="1" Text="Date:" TextColor="LightGray" FontSize="Small" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
                     <DatePicker
-                           Grid.Column="3"
-                           HorizontalOptions="StartAndExpand"         
+                           Grid.Column="2"
+                           TextColor="DarkGray"
+                           HorizontalOptions="Start"         
                            Date="{Binding WorkDate}" />
 
-                   <Button Grid.Column="4" 
+                   <Button Grid.Column="3" 
                            Text="Save"
-                           
                            Command="{Binding newCompCommand}"
                            BackgroundColor="#0bd38a"
                            BorderRadius="1"
                            BorderColor="Transparent"
-                           TextColor="LightSlateGray"
-                           HeightRequest="30"
-                           WidthRequest="30"
+                           TextColor="White"
+                           HeightRequest="35"
+                           WidthRequest="15"
                            Margin="0,0,10,0"
                            VerticalOptions="StartAndExpand"
                            FontAttributes="Bold"/>

@@ -85,20 +85,22 @@
                             Text="Let's get to work" />
 
                         <!--  Entry to get email ID from user  -->
-                        <local:EmailEntry Grid.Row="2" Padding="0,24" />
+                        <Entry Grid.Row="2" 
+                               Text="{Binding CompID}"
+                               Placeholder="Username"
+                               PlaceholderColor="LightGray" 
+                               TextColor="Black"
+                               BackgroundColor="#5b5d68"
+                               Margin="5"/>
 
-                        <!--  Entry to get password from user  -->
-                        <border:SfBorder
-                            Grid.Row="3"
-                            BorderColor="{Binding Source={x:Reference PasswordEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=0}"
-                            Style="{StaticResource SfBorderStyle}">
-                            <control:BorderlessEntry
-                                x:Name="PasswordEntry"
-                                IsPassword="True"
-                                Placeholder="Password"
-                                Style="{StaticResource EntryStyle}"
-                                Text="{Binding Password}" />
-                        </border:SfBorder>
+                        <Entry Grid.Row="3" 
+                               Text="{Binding CompID}"
+                               Placeholder="Password" 
+                               PlaceholderColor="LightGray"
+                               TextColor="Black"
+                               IsPassword="True"
+                               BackgroundColor="#5b5d68"
+                               Margin="5"/>
 
                         <!--  Forgot password link  -->
                         <Label
@@ -116,48 +118,20 @@
                         </Label>
 
                         <!--  Login button  -->
-                        <buttons:SfButton
+                       
+                        <Button Text="LOGIN"
                             Grid.Row="5"
                             Margin="0,16"
                             Command="{Binding LoginCommand}"
-                            Style="{StaticResource SfButtonStyle}"
-                            Text="LOG IN" />
+                            BackgroundColor="#0bd38a"
+                            BorderRadius="1"
+                            BorderColor="Transparent"
+                            TextColor="White"
+                            HeightRequest="50"
+                            VerticalOptions="End"
+                            FontAttributes="Bold"/>
 
 
-                        <Label
-                            Grid.Row="6"
-                            FontFamily="{StaticResource Montserrat-Medium}"
-                            HorizontalTextAlignment="Center"
-                            Style="{StaticResource LabelStyle}"
-                            Text="Or create an account using social media" />
-
-                        <!--  Login through facebook account  -->
-                        <buttons:SfButton
-                            Grid.Row="7"
-                            Margin="0,16,0,16"
-                            BackgroundColor="{DynamicResource FacebookBlue}"
-                            Command="{Binding SocialMediaLoginCommand}"
-                            CornerRadius="20"
-                            HeightRequest="40">
-                            <buttons:SfButton.Content>
-                                <StackLayout
-                                    HorizontalOptions="CenterAndExpand"
-                                    Orientation="Horizontal"
-                                    VerticalOptions="Center">
-                                    <Label
-                                        FontFamily="{StaticResource FontIcons}"
-                                        FontSize="18"
-                                        Text="&#xe735;"
-                                        TextColor="{DynamicResource Gray-White}"
-                                        VerticalTextAlignment="Center" />
-                                    <Label
-                                        FontFamily="{StaticResource Montserrat-Medium}"
-                                        FontSize="16"
-                                        Text="Login with Facebook"
-                                        TextColor="{DynamicResource Gray-White}" />
-                                </StackLayout>
-                            </buttons:SfButton.Content>
-                        </buttons:SfButton>
 
                     </Grid>
 
