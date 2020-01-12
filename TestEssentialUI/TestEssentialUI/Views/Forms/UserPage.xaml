@@ -30,7 +30,7 @@
             
             <progressBar:SfCircularProgressBar Grid.Row="1" Progress="25" ProgressColor="Red" HeightRequest="200"/>
 
-            <Frame BackgroundColor="#5b5d68" Grid.Row="2" HasShadow="True" CornerRadius="10" Margin="20,-20,20,0" Padding="0" HeightRequest="120" VerticalOptions="Start">
+            <Frame BackgroundColor="#5b5d68" Grid.Row="2" HasShadow="True" CornerRadius="10" Margin="20,-20,20,0" Padding="0" HeightRequest="100" VerticalOptions="Start">
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -71,8 +71,8 @@
 
 
             <StackLayout Grid.Row="4" Orientation="Vertical">
-                <Label Text="Save Work" TextColor="LightGray"  FontSize="Medium" FontAttributes="Bold" Margin="5"/>
-                <Grid HeightRequest="25" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                <Label Text="Save Work" TextColor="LightGray"  HeightRequest="20" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
+                <Grid HeightRequest="35" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
@@ -102,11 +102,11 @@
                            BackgroundColor="#0bd38a"
                            BorderRadius="1"
                            BorderColor="Transparent"
-                           TextColor="LightGray"
-                           HeightRequest="20"
+                           TextColor="LightSlateGray"
+                           HeightRequest="30"
                            WidthRequest="30"
                            Margin="0,0,10,0"
-                           VerticalOptions="End"
+                           VerticalOptions="StartAndExpand"
                            FontAttributes="Bold"/>
                 </Grid>
                 
