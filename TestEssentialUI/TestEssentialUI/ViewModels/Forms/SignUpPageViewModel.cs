@@ -7,6 +7,9 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+using Firebase.Database;
+using BIM493_Project.Model;
+using BIM493_Project.HelperUser;
     namespace BIM493_Project.ViewModels.Forms
 {
     /// <summary>
@@ -23,7 +26,10 @@
 
         private string confirmPassword;
 
+        private string email;
+
         #endregion
+
 
         #region Constructor
 
@@ -38,6 +44,7 @@
 
         #endregion
 
+        FirebaseHelperUser fireBaseHelperUser = new FirebaseHelperUser(); 
         #region Property
 
         /// <summary>
@@ -106,6 +113,21 @@
             }
         }
 
+        public string Email { 
+            get {
+                return this.email;
+            }
+            set
+            {
+                if (this.email == value)
+                {
+                    return;
+                }
+                this.email = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
         #endregion
 
         #region Command
@@ -139,6 +161,9 @@
         /// <param name="obj">The Object</param>
         async private void SignUpClicked(object obj)
         {
+
+            await fireBaseHelperUser.AddUser(Name, Email, Password);
+
             // Do something
             Preferences.Set("email", Email);
             Preferences.Set("password", Password);

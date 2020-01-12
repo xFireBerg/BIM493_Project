@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Firebase.Database;
-using BIM493_Project.Helper;
+using BIM493_Project.HelperUser;
 using BIM493_Project.Model;
 
 namespace BIM493_Project.ViewModels.Forms
@@ -21,6 +21,7 @@ namespace BIM493_Project.ViewModels.Forms
         }
 
         FirebaseHelper firebaseHelper = new FirebaseHelper();
+        FirebaseHelperUser firebaseHelperUser = new FirebaseHelperUser();
 
         string partUserName1;
         string partUserName2;
@@ -28,6 +29,7 @@ namespace BIM493_Project.ViewModels.Forms
         int targetNumber;
         // ! date shoul check
         DateTime dueDate;
+        bool userExists;
 
 
 
@@ -100,7 +102,13 @@ namespace BIM493_Project.ViewModels.Forms
             }
         }
 
-
+        public bool UserExists{
+            get { return userExists; }
+            set
+            {
+                userExists = value;
+            }
+        }
 
 
         #endregion
@@ -124,12 +132,26 @@ async private void newCompClickedDone(object obj)
             INavigation nav = Application.Current.MainPage.Navigation;
             // Do something
 
-            await firebaseHelper.AddCompetition(CompName, TargetNumber, DueDate, PartUserName1, PartUserName2);
-            //compName = string.Empty;
+            var participant1 = await firebaseHelperUser.GetUser(PartUserName1);
+            var participant2 = await firebaseHelperUser.GetUser(PartUserName2);
+
+            if (participant1!=null && participant2 != null)
+            {
+                await firebaseHelper.AddCompetition(CompName, TargetNumber, DueDate, PartUserName1, PartUserName2);
+                await Application.Current.MainPage.DisplayAlert("Success", "Competition successfully created", "OK");
+
+            }
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Make sure the participants exist", "OK");
+            }
+
+
+                        //compName = string.Empty;
             //targetNumber = 0;
             //partUserName1 = string.Empty;
             //partUserName2 = string.Empty;
-            await Application.Current.MainPage.DisplayAlert("Success", "Competition Added Successfully", "OK");
+            //await Application.Current.MainPage.DisplayAlert("Success", "Competition Added Successfully", "OK");
             var allCompeitions = await firebaseHelper.GetAllCompetitions();
             //lstPersons.ItemsSource = allCompeitions;
 

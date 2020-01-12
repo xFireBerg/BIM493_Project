@@ -15,7 +15,7 @@ namespace BIM493_Project.Views.Forms
         /// </summary>
         public EmailEntry()
         {
-            InitializeComponent();
+            
         }
     }
 }

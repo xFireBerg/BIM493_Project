@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using Xamarin.Forms;
+using Firebase.Database;
+using BIM493_Project.HelperUser;
+using BIM493_Project.Model;
+
 
 namespace BIM493_Project.ViewModels.Forms
 {
@@ -15,9 +20,13 @@ namespace BIM493_Project.ViewModels.Forms
             this.newCompCommand = new Command(this.newCompClickedDone);
 
         }
+        FirebaseHelperUser firebaseHelperUser = new FirebaseHelperUser();
+
         async private void newCompClickedDone(object obj)
         {
             // We need to save-send data here ?????
+
+
 
 
             INavigation nav = Application.Current.MainPage.Navigation;
