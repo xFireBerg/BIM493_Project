@@ -16,5 +16,7 @@ namespace BIM493_Project.Model
         public string Password { get; set; }
 
         public string Email { get; set; }
+
+        
     }
 }

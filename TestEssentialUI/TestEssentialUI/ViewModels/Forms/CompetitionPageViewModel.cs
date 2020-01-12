@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Firebase.Database;
 using BIM493_Project.HelperUser;
 using BIM493_Project.Model;
+using BIM493_Project.HelperCompDetails;
 
 namespace BIM493_Project.ViewModels.Forms
 {
@@ -22,6 +23,7 @@ namespace BIM493_Project.ViewModels.Forms
 
         FirebaseHelper firebaseHelper = new FirebaseHelper();
         FirebaseHelperUser firebaseHelperUser = new FirebaseHelperUser();
+        FirebaseHelperCompDetails firebaseHelperCompDetails = new FirebaseHelperCompDetails();
 
         string partUserName1;
         string partUserName2;
@@ -138,6 +140,8 @@ async private void newCompClickedDone(object obj)
             if (participant1!=null && participant2 != null)
             {
                 await firebaseHelper.AddCompetition(CompName, TargetNumber, DueDate, PartUserName1, PartUserName2);
+                await firebaseHelperCompDetails.AddCompDetail(CompName, PartUserName1);
+                await firebaseHelperCompDetails.AddCompDetail(CompName, PartUserName2);
                 await Application.Current.MainPage.DisplayAlert("Success", "Competition successfully created", "OK");
 
             }
@@ -152,7 +156,10 @@ async private void newCompClickedDone(object obj)
             //partUserName1 = string.Empty;
             //partUserName2 = string.Empty;
             //await Application.Current.MainPage.DisplayAlert("Success", "Competition Added Successfully", "OK");
-            var allCompeitions = await firebaseHelper.GetAllCompetitions();
+            
+            
+            //var allCompetitions = await firebaseHelper.GetAllCompetitions();
+            
             //lstPersons.ItemsSource = allCompeitions;
 
             await nav.PopAsync();
