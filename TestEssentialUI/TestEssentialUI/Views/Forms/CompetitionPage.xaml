@@ -12,7 +12,7 @@
             <StackLayout VerticalOptions="StartAndExpand">
                 <Label Text="Participant 1" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
                 <Entry  
-                   Text="{Binding partUserName1}"
+                   Text="{Binding PartUserName1}"
                    Placeholder="Participant 1"
                    PlaceholderColor="#6c6e77"
                    BackgroundColor="#474a55"
@@ -21,7 +21,7 @@
 
                 <Label Text="Participant 2" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
                 <Entry  
-                   Text="{Binding partUserName2}"
+                   Text="{Binding PartUserName2}"
                    Placeholder="Participant 2"
                    PlaceholderColor="#6c6e77"
                    BackgroundColor="#474a55"
@@ -30,7 +30,7 @@
 
                 <Label Text="Competition Name" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
                 <Entry 
-                   Text="{Binding compName}"
+                   Text="{Binding CompName}"
                    Placeholder="Competition Name"
                    PlaceholderColor="#6c6e77"
                    BackgroundColor="#474a55"
@@ -39,7 +39,7 @@
 
                 <Label Text="Target Number" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
                 <Entry 
-                   Text="{Binding targetNumber}"
+                   Text="{Binding TargetNumber}"
                    Placeholder="Target Number"
                    PlaceholderColor="#6c6e77"
                    BackgroundColor="#474a55"
@@ -49,7 +49,7 @@
                 <Label Text="Due Date" TextColor="LightGray"  FontSize="Medium" FontAttributes="Bold" Margin="5"/>
                 <DatePicker
                    HorizontalOptions="StartAndExpand"         
-                   Date="{Binding dueDate}" />
+                   Date="{Binding DueDate}" />
                 
                 
             </StackLayout>
