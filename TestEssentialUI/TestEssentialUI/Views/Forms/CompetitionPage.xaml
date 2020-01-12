@@ -79,7 +79,7 @@
                     BorderRadius="1"
                     BorderColor="Transparent"
                     TextColor="White"
-                    HeightRequest="50"
+                    HeightRequest="51"
                     VerticalOptions="End"
                     Margin="0,0,0,30"
                     FontAttributes="Bold"/>

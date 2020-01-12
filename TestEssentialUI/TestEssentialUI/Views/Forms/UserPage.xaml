@@ -130,7 +130,7 @@
             
 
             <ListView x:Name="ForecastList" ItemsSource="{Binding Weathers}" SeparatorVisibility="None"
-                  Grid.Row="5" Margin="5,0" VerticalOptions="FillAndExpand" HeightRequest="150" WidthRequest="600" HorizontalOptions="CenterAndExpand" >
+                  Grid.Row="5" Margin="5,0" VerticalOptions="FillAndExpand" HeightRequest="151" WidthRequest="600" HorizontalOptions="CenterAndExpand" >
                 <ListView.ItemTemplate>
                     <DataTemplate >
                         <ViewCell>
