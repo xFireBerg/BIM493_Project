@@ -22,7 +22,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Text="Reading Competition" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" TextColor="White" FontSize="Large"/>
+            <Label Grid.Row="0" Text="{Binding CompName}" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" TextColor="White" FontSize="Large"/>
 
  
             <StackLayout Grid.Row="1" Orientation="Vertical" Margin="0,10" HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
@@ -32,9 +32,9 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <Button Command="{Binding tempraryCommand}" Grid.Column="0" Text="Zabi" FontSize="Medium" HorizontalOptions="StartAndExpand" BackgroundColor="#5b5d68" TextColor="LightGreen" Margin="0,0,10,0"/>
+                    <Button Command="{Binding tempraryCommand}" Grid.Column="0" Text="{Binding PartUserName2}" FontSize="Medium" HorizontalOptions="StartAndExpand" BackgroundColor="#5b5d68" TextColor="LightGreen" Margin="0,0,10,0"/>
                     <ProgressBar Grid.Column="1" Progress="0.9" HeightRequest="21"  ProgressColor="LightGreen" WidthRequest="250" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
-                    <Label Grid.Column="2" Text="%90" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="WhiteSmoke" Margin="5,0"/>
+                    <Label Grid.Column="2" Text="{Binding WorkDone1}" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="WhiteSmoke" Margin="5,0"/>
                 </Grid>
 
                 <Frame BackgroundColor="#5b5d68" Grid.Row="2" HasShadow="True" CornerRadius="10" Margin="20,0,20,0" Padding="0" HeightRequest="100" VerticalOptions="Start">
@@ -85,9 +85,9 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <Button Command="{Binding tempraryCommand}" Grid.Column="0" Text="Ahmet" FontSize="Medium" HorizontalOptions="StartAndExpand" BackgroundColor="#5b5d68" TextColor="Red" Margin="0,0,10,0"/>
+                    <Button Command="{Binding tempraryCommand}" Grid.Column="0" Text="{Binding PartUserName1}" FontSize="Medium" HorizontalOptions="StartAndExpand" BackgroundColor="#5b5d68" TextColor="Red" Margin="0,0,10,0"/>
                     <ProgressBar Grid.Column="1" Progress="0.25" HeightRequest="21"  WidthRequest="250" ProgressColor="Red" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
-                    <Label Grid.Column="2" Text="%25" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" TextColor="WhiteSmoke" Margin="5,0"/>
+                    <Label Grid.Column="2" Text="{Binding WorkDone1}" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" TextColor="WhiteSmoke" Margin="5,0"/>
                 </Grid>
 
                 <Frame BackgroundColor="#5b5d68" Grid.Row="2" HasShadow="True" CornerRadius="10" Margin="20,0,20,0" Padding="0" HeightRequest="100" VerticalOptions="Start">

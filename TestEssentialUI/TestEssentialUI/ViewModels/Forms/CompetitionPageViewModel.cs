@@ -29,6 +29,8 @@ namespace BIM493_Project.ViewModels.Forms
         string partUserName2;
         string compName;
         int targetNumber;
+        string workDone1;
+        string workDone2;
         // ! date shoul check
         DateTime dueDate;
         bool userExists;
@@ -73,7 +75,24 @@ namespace BIM493_Project.ViewModels.Forms
                 OnPropertyChanged();
             }
         }
-
+        public string WorkDone1
+        {
+            get { return workDone1; }
+            set
+            {
+                workDone1 = value;
+                OnPropertyChanged();
+            }
+        }
+        public string WorkDone2
+        {
+            get { return workDone2; }
+            set
+            {
+                workDone2 = value;
+                OnPropertyChanged();
+            }
+        }
         public string CompName
         {
             get { return compName; }

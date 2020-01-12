@@ -15,7 +15,7 @@ namespace BIM493_Project.Views.Forms
         public CompetitionDetail()
         {
             InitializeComponent();
-            BindingContext = new ViewModels.Forms.CompetitionPageViewModel();
+            BindingContext = new ViewModels.Forms.CompetitionDetailPageViewModel();
         }
     }
 }
