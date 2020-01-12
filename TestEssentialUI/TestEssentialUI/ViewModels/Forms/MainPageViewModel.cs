@@ -14,17 +14,12 @@ using BIM493_Project.Model;
 
 namespace BIM493_Project.ViewModels.Forms
 {
-    public class MainPageViewModel : INotifyPropertyChanged
+    public class MainPageViewModel : BaseViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        
 
         FirebaseHelper firebaseHelper = new FirebaseHelper();
 
-
-        void OnPropertyChanged([CallerMemberName] string name = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
 
 
 
@@ -42,9 +37,6 @@ namespace BIM493_Project.ViewModels.Forms
 
         #endregion
 
-
-
-
         #region property
 
         string name;
@@ -54,7 +46,7 @@ namespace BIM493_Project.ViewModels.Forms
             set 
             {
                 name = value;
-                OnPropertyChanged();
+                this.NotifyPropertyChanged();
             }
         }
 
@@ -67,7 +59,7 @@ namespace BIM493_Project.ViewModels.Forms
             set
             {
                 compList = value;
-                OnPropertyChanged();
+                this.NotifyPropertyChanged();
             }
         }
 
@@ -110,6 +102,43 @@ namespace BIM493_Project.ViewModels.Forms
             //throw new NotImplementedException();
             
         }
+
+        #endregion
+
+
+        #region test_list
+        public List<TempList> Weathers { get => Data(); }
+        public Command testList { get; set; }
+
+        private List<TempList> Data()
+        {
+            var tempList = new List<TempList>();
+
+            tempList.Add(new TempList { Temp = "Reading Competition" ,ID="24537" });
+            tempList.Add(new TempList { Temp = "Sport Compettion", ID = "63528" });
+            tempList.Add(new TempList { Temp = "Can we Finish Competition", ID = "25687" });
+            tempList.Add(new TempList { Temp = "MObile Comp", ID = "24512" });
+            tempList.Add(new TempList { Temp = "1 Bilion Line Code ", ID = "75288" });
+            tempList.Add(new TempList { Temp = "48 Hour Non-Stop Code", ID = "22544" });
+            tempList.Add(new TempList { Temp = "Reading Competition", ID = "69851" });
+            tempList.Add(new TempList { Temp = "Sport Compettion", ID = "01245" });
+            tempList.Add(new TempList { Temp = "Can we Finish Competition", ID = "01255" });
+            tempList.Add(new TempList { Temp = "Reading Competition", ID = "75864" });
+            tempList.Add(new TempList { Temp = "Sport Compettion", ID = "22515" });
+            tempList.Add(new TempList { Temp = "Can we Finish Competition", ID = "89754" });
+
+
+            return tempList;
+        }
+
+        public class TempList
+        {
+            public string Temp { get; set; }
+            public string ID { get; set; }
+
+        }
+
+
 
         #endregion
 

@@ -3,14 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:control="clr-namespace:BIM493_Project.Controls"
+             xmlns:converter="clr-namespace:BIM493_Project.Converters"
+             xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+             xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
              mc:Ignorable="d"
              BackgroundColor="#5b5d68"
              x:Class="BIM493_Project.MainPage">
 
 
     <StackLayout Orientation="Vertical" Padding="10" Spacing="10">
-         <Label Text="{Binding CompID}"/>
+         <Label Text="{Binding CompID}" TextColor="FloralWhite" FontSize="Large"/>
        
          <Entry Text="{Binding CompID}" Placeholder="Enter CompetitionID"/>
         <Button Text="Search"
@@ -23,8 +28,40 @@
                             VerticalOptions="End"
                             Margin="0,0,0,30"
                             FontAttributes="Bold"/>
-    
-        <ListView ItemsSource="{Binding CompList}"/>
+        <StackLayout>
+
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0"  Text="Comp-Name" TextColor="Black" FontSize="Small" FontAttributes="Bold" HeightRequest="100" HorizontalOptions="StartAndExpand" />
+                <Label  Grid.Column="1"  Text="Comp-ID" TextColor="Black" FontSize="Small" FontAttributes="Bold" HeightRequest="100"  HorizontalOptions="StartAndExpand"/>
+            </Grid>
+        </StackLayout>
+
+
+        <ListView   x:Name="ForecastList" ItemsSource="{Binding Weathers}" SeparatorVisibility="None"
+                   Margin="5,0" VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <ViewCell>
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0" Text="{Binding Temp}" TextColor="FloralWhite" FontSize="15" VerticalOptions="Center" Margin="20,0"/>
+                            <Label Grid.Column="1" Text="{Binding ID}" TextColor="FloralWhite" FontSize="15"  HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="0,0,20,0"/>
+
+                        </Grid>
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <Button           
                             
                             Command="{Binding newCompCommand}"
@@ -37,5 +74,6 @@
                             VerticalOptions="End"
                             Margin="0,0,0,30"
                             FontAttributes="Bold"/>
+        
     </StackLayout>
 </ContentPage>

@@ -10,34 +10,43 @@
     <ContentPage.Content>
         <Grid VerticalOptions="FillAndExpand" Padding="0,20,0,20">
             <StackLayout VerticalOptions="StartAndExpand">
+                <Label Text="Participant 1" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
                 <Entry  
                    Text="{Binding pertUserName1}"
                    Placeholder="Perticipant 1"
                    PlaceholderColor="#6c6e77"
                    BackgroundColor="#474a55"
                    TextColor="White"
-                   HeightRequest="50"/>
+                   HeightRequest="30"/>
+
+                <Label Text="Participant 2" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
                 <Entry  
                    Text="{Binding pertUserName2}"
-                   Placeholder="Perticipant 1"
+                   Placeholder="Participant 1"
                    PlaceholderColor="#6c6e77"
                    BackgroundColor="#474a55"
                    TextColor="White"
-                   HeightRequest="50"/>
+                   HeightRequest="30"/>
+
+                <Label Text="Competition Name" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
                 <Entry 
                    Text="{Binding compName}"
                    Placeholder="Competition Name"
                    PlaceholderColor="#6c6e77"
                    BackgroundColor="#474a55"
                    TextColor="White"
-                   HeightRequest="50"/>
+                   HeightRequest="30"/>
+
+                <Label Text="Target Number" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
                 <Entry 
                    Text="{Binding targetNumber}"
                    Placeholder="Target Number"
                    PlaceholderColor="#6c6e77"
                    BackgroundColor="#474a55"
                    TextColor="White"
-                   HeightRequest="50"/>
+                   HeightRequest="30"/>
+
+                <Label Text="Due Date" TextColor="LightGray"  FontSize="Medium" FontAttributes="Bold" Margin="5"/>
                 <DatePicker
                    HorizontalOptions="StartAndExpand"         
                    Date="{Binding dueDate}" />

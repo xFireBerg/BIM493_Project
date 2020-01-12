@@ -17,6 +17,7 @@
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="17.4.0.40" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="17.4.0.40" />
     <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="17.4.0.40" />
+    <PackageReference Include="Syncfusion.Xamarin.SfProgressBar" Version="17.4.0.40" />
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
     <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
   </ItemGroup>

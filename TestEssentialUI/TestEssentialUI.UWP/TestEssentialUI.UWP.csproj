@@ -104,6 +104,10 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\avg.png" />
+    <Content Include="Assets\avg1.png" />
+    <Content Include="Assets\daily.png" />
+    <Content Include="Assets\daily1.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
@@ -128,13 +132,25 @@
     <Content Include="Assets\StoreLogo.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-200.png" />
     <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\target.png" />
+    <Content Include="Assets\target1.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Assets\win.png" />
+    <Content Include="Assets\win1.png" />
+    <Content Include="avg.png" />
+    <Content Include="avg1.png" />
+    <Content Include="daily.png" />
+    <Content Include="daily1.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="scale-100\LoginBackground.scale-100.png" />
     <Content Include="scale-100\LoginBackground.scale-200.png" />
     <Content Include="scale-100\LoginBackground.scale-400.png" />
+    <Content Include="target.png" />
+    <Content Include="target1.png" />
+    <Content Include="win.png" />
+    <Content Include="win1.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -154,6 +170,9 @@
       <Version>17.4.0.40</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfComboBox">
+      <Version>17.4.0.40</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfProgressBar">
       <Version>17.4.0.40</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />

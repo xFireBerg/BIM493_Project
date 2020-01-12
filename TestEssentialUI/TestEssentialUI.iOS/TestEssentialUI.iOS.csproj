@@ -135,6 +135,9 @@
     <PackageReference Include="Syncfusion.Xamarin.SfComboBox">
       <Version>17.4.0.40</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfProgressBar">
+      <Version>17.4.0.40</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
     <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
   </ItemGroup>
@@ -187,5 +190,28 @@
   <ItemGroup>
     <BundleResource Include="Resources\LoginBackground~ipad.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BundleResource Include="Resources\avg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\daily.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\target.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\win.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\win1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\target1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\daily1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\avg1.png" />
+  </ItemGroup>
 </Project>
