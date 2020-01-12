@@ -9,12 +9,17 @@ using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Internals;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using BIM493_Project.Helper;
+using BIM493_Project.Model;
 
 namespace BIM493_Project.ViewModels.Forms
 {
     public class MainPageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
+        FirebaseHelper firebaseHelper = new FirebaseHelper();
+
 
         void OnPropertyChanged([CallerMemberName] string name = "")
         {
@@ -31,11 +36,13 @@ namespace BIM493_Project.ViewModels.Forms
         public MainPageViewModel()
         {
             this.newCompCommand = new Command(this.newCompClicked);
-            this.searchCompCommand = new Command(this.seachCompClicked);
+            this.SearchCompCommand = new Command(this.SeachCompClicked);
             
         }
 
         #endregion
+
+
 
 
         #region property
@@ -68,7 +75,7 @@ namespace BIM493_Project.ViewModels.Forms
 
         #region Command
         public Command newCompCommand { get; set; }
-        public Command searchCompCommand { get; set; }
+        public Command SearchCompCommand { get; set; }
 
 
         #endregion
@@ -86,9 +93,22 @@ namespace BIM493_Project.ViewModels.Forms
         }
 
 
-        private void seachCompClicked(object obj)
+        async private void SeachCompClicked(object obj)
         {
-            throw new NotImplementedException();
+            var competition = await firebaseHelper.GetCompetition(obj.ToString());
+            if (competition != null)
+            {
+                CompID = competition.CompetitionID.ToString();
+              
+                //await DisplayAlert("Success", "Competition Retrieved Successfully", "OK");
+
+            }
+            else
+            {
+                //await DisplayAlert("Error", "No Competition Available", "OK");
+            }
+            //throw new NotImplementedException();
+            
         }
 
         #endregion

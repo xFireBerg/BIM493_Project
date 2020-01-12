@@ -14,7 +14,7 @@
        
          <Entry Text="{Binding CompID}" Placeholder="Enter CompetitionID"/>
         <Button Text="Search"
-                            Command="{Binding searchCompCommand}"
+                            Command="{Binding SearchCompCommand}"
                             BackgroundColor="#0bd38a"
                             BorderRadius="1"
                             BorderColor="Transparent"

@@ -5,8 +5,6 @@ using System.Text;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
-using Windows.ApplicationModel.Contacts;
-using Android.Content.Res;
 
 namespace BIM493_Project.ViewModels.Forms
 {
