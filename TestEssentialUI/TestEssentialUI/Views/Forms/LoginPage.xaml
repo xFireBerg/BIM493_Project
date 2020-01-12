@@ -86,7 +86,7 @@
 
                         <!--  Entry to get email ID from user  -->
                         <Entry Grid.Row="2" 
-                               Text="{Binding CompID}"
+                               Text="{Binding Name}"
                                Placeholder="Username"
                                PlaceholderColor="LightGray" 
                                TextColor="Black"
@@ -94,7 +94,7 @@
                                Margin="5"/>
 
                         <Entry Grid.Row="3" 
-                               Text="{Binding CompID}"
+                               Text="{Binding Password}"
                                Placeholder="Password" 
                                PlaceholderColor="LightGray"
                                TextColor="Black"

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="#5b5d68"
+             x:Class="BIM493_Project.Views.Forms.CompetitionPage">
+
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand" Padding="0,20,0,20">
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Label Text="Participant 1" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
+                <Entry  
+                   Text="{Binding PartUserName1}"
+                   Placeholder="Participant 1"
+                   PlaceholderColor="#6c6e77"
+                   BackgroundColor="#474a55"
+                   TextColor="White"
+                   HeightRequest="30"/>
+
+                <Label Text="Participant 2" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
+                <Entry  
+                   Text="{Binding PartUserName2}"
+                   Placeholder="Participant 2"
+                   PlaceholderColor="#6c6e77"
+                   BackgroundColor="#474a55"
+                   TextColor="White"
+                   HeightRequest="30"/>
+
+                <Label Text="Competition Name" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
+                <Entry 
+                   Text="{Binding CompName}"
+                   Placeholder="Competition Name"
+                   PlaceholderColor="#6c6e77"
+                   BackgroundColor="#474a55"
+                   TextColor="White"
+                   HeightRequest="30"/>
+
+                <Label Text="Target Number" TextColor="LightGray" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
+                <Entry 
+                   Text="{Binding TargetNumber}"
+                   Placeholder="Target Number"
+                   PlaceholderColor="#6c6e77"
+                   BackgroundColor="#474a55"
+                   TextColor="White"
+                   HeightRequest="30"/>
+
+                <Label Text="Due Date" TextColor="LightGray"  FontSize="Medium" FontAttributes="Bold" Margin="5"/>
+                <DatePicker
+                   HorizontalOptions="StartAndExpand"         
+                   Date="{Binding DueDate}" />
+                
+                
+            </StackLayout>
+            <Button Text="DONE" 
+                    Command="{Binding newCompCommand}"
+                    BackgroundColor="#0bd38a"
+                    BorderRadius="1"
+                    BorderColor="Transparent"
+                    TextColor="White"
+                    HeightRequest="50"
+                    VerticalOptions="End"
+                    Margin="0,0,0,30"
+                    FontAttributes="Bold"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

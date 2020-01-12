@@ -19,7 +19,9 @@ namespace BIM493_Project.HelperUser
               .Child("Users")
               .OnceAsync<UserPageModel>()).Select(item => new UserPageModel
               {
-                  UserName = item.Object.UserName
+                  UserName = item.Object.UserName,
+                  Email = item.Object.Email,
+                  Password = item.Object.Password  
               }).ToList();
         }
 
