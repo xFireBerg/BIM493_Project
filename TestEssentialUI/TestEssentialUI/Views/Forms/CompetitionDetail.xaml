@@ -48,28 +48,28 @@
                         <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
                             <Image Source="avg1.png" HeightRequest="25" HorizontalOptions="Center"/>
                             <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                                <Label Text="25" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label Text="35" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="Average" TextColor="LightGray" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
                             </StackLayout>
                         </StackLayout>
                         <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
                             <Image Source="daily1.png" HeightRequest="25" HorizontalOptions="Center"/>
                             <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                                <Label Text="50" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label Text="45" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="Daily" TextColor="LightGray" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
                             </StackLayout>
                         </StackLayout>
                         <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
                             <Image Source="target1.png" HeightRequest="25" HorizontalOptions="Center"/>
                             <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                                <Label Text="70" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label Text="53" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="Date" TextColor="LightGray" FontSize="Micro"  FontAttributes="Bold" HorizontalOptions="Center"/>
                             </StackLayout>
                         </StackLayout>
                         <StackLayout Grid.Column="3" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
                             <Image Source="win1.png" HeightRequest="25" HorizontalOptions="Center"/>
                             <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                                <Label Text="100" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label Text="50" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="To-Beat" TextColor="LightGray" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
                             </StackLayout>
                         </StackLayout>
@@ -86,7 +86,7 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Button Command="{Binding tempraryCommand}" Grid.Column="0" Text="Ahmet" FontSize="Medium" HorizontalOptions="StartAndExpand" BackgroundColor="#5b5d68" TextColor="Red" Margin="0,0,10,0"/>
-                    <ProgressBar Grid.Column="1" Progress="0.7" HeightRequest="21"  WidthRequest="250" ProgressColor="Red" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <ProgressBar Grid.Column="1" Progress="0.25" HeightRequest="21"  WidthRequest="250" ProgressColor="Red" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
                     <Label Grid.Column="2" Text="%25" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" TextColor="WhiteSmoke" Margin="5,0"/>
                 </Grid>
 
@@ -101,28 +101,28 @@
                         <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
                             <Image Source="avg1.png" HeightRequest="25" HorizontalOptions="Center"/>
                             <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                                <Label Text="25" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label Text="13" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="Average" TextColor="LightGray" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
                             </StackLayout>
                         </StackLayout>
                         <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
                             <Image Source="daily1.png" HeightRequest="25" HorizontalOptions="Center"/>
                             <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                                <Label Text="50" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label Text="45" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="Daily" TextColor="LightGray" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
                             </StackLayout>
                         </StackLayout>
                         <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
                             <Image Source="target1.png" HeightRequest="25" HorizontalOptions="Center"/>
                             <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                                <Label Text="70" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label Text="63" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="Date" TextColor="LightGray" FontSize="Micro"  FontAttributes="Bold" HorizontalOptions="Center"/>
                             </StackLayout>
                         </StackLayout>
                         <StackLayout Grid.Column="3" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
                             <Image Source="win1.png" HeightRequest="25" HorizontalOptions="Center"/>
                             <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                                <Label Text="100" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label Text="120" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="To-Beat" TextColor="LightGray" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center"/>
                             </StackLayout>
                         </StackLayout>
