@@ -3,21 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
-             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-             xmlns:control="clr-namespace:BIM493_Project.Controls"
-             xmlns:converter="clr-namespace:BIM493_Project.Converters"
-             xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
-             xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
              mc:Ignorable="d"
              BackgroundColor="#5b5d68"
-             x:Class="BIM493_Project.MainPage">
+             x:Class="BIM493_Project.MainPage"
+             xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+             BackgroundImageSource="{core:OnPlatformOrientationStringValue Default=LoginBackground.png,
+                                                                  iOSPhoneLandscape=LoginBackground-Landscape.png,
+                                                                  iOSTabletLandscape=LoginBackground-Landscape.png}">
 
 
     <StackLayout Orientation="Vertical" Padding="10" Spacing="10">
          <Label Text="{Binding CompID}" TextColor="FloralWhite" FontSize="Large"/>
-       
-         <Entry Text="{Binding CompID}" Placeholder="Enter CompetitionID"/>
+
+        <Entry Text="{Binding CompID}" Placeholder="Enter CompetitionID" PlaceholderColor="LightGray" TextColor="LightGray"/>
         <Button Text="Search"
                             Command="{Binding SearchCompCommand}"
                             BackgroundColor="#0bd38a"
@@ -36,8 +34,8 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0"  Text="Comp-Name" TextColor="Black" FontSize="Small" FontAttributes="Bold" HeightRequest="100" HorizontalOptions="StartAndExpand" />
-                <Label  Grid.Column="1"  Text="Comp-ID" TextColor="Black" FontSize="Small" FontAttributes="Bold" HeightRequest="100"  HorizontalOptions="StartAndExpand"/>
+                <Label Grid.Column="0"  Text="Comp-Name" TextColor="HotPink" FontSize="Small" FontAttributes="Bold" HeightRequest="100" HorizontalOptions="StartAndExpand" />
+                <Label  Grid.Column="1"  Text="Comp-ID" TextColor="HotPink" FontSize="Small" FontAttributes="Bold" HeightRequest="100"  HorizontalOptions="StartAndExpand"/>
             </Grid>
         </StackLayout>
 
