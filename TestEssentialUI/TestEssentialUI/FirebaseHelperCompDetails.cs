@@ -73,9 +73,9 @@ namespace BIM493_Project.HelperCompDetails
                 {
                     Participant1 = pariticipant1,
                     Competition = competition,
-                    Work1 = 90.ToString(),
+                    Work1 = 70.ToString(),
                     Participant2 = participant2,
-                    Work2 = 20.ToString(),
+                    Work2 = 25.ToString(),
                     Target = target,
                     DueDate = dueDate
                 }) ;
