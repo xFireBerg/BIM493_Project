@@ -100,13 +100,20 @@ namespace BIM493_Project.ViewModels.Forms
         async private void SeachCompClicked(object obj)
         {
             
-            var competition = await firebaseHelper.GetCompetition(CompName.ToString());
+            var competition = await firebaseHelper.GetCompetition(CompName);
             if (competition != null)
             {
                 //CompID = competition.CompetitionID.ToString();
-                CompName = competition.CompetitionName.ToString();
-              
-                await Application.Current.MainPage.DisplayAlert("Success", "Competition found", "OK");
+                CompName = competition.CompetitionName;
+                var Participant1 = competition.Participant1;
+                var Participant2 = competition.Participant2;
+                var Target = competition.Target;
+                var DueDate = competition.DueDate;
+                INavigation nav = Application.Current.MainPage.Navigation;
+
+                await nav.PopAsync();
+                await nav.PushAsync(new Views.Forms.CompetitionDetail());
+                await Application.Current.MainPage.DisplayAlert("Success", "Competition found" , "OK");
 
             }
             else

@@ -9,6 +9,8 @@ using Firebase.Database;
 using BIM493_Project.HelperUser;
 using BIM493_Project.Model;
 using BIM493_Project.HelperCompDetails;
+using Xamarin.Essentials;
+
 
 namespace BIM493_Project.ViewModels.Forms
 {
@@ -152,15 +154,15 @@ async private void newCompClickedDone(object obj)
 
             INavigation nav = Application.Current.MainPage.Navigation;
             // Do something
-
+            
             var participant1 = await firebaseHelperUser.GetUser(PartUserName1);
             var participant2 = await firebaseHelperUser.GetUser(PartUserName2);
-
+            Preferences.Set("CompetitionName", CompName);
             if (participant1!=null && participant2 != null)
             {
                 await firebaseHelper.AddCompetition(CompName, TargetNumber, DueDate, PartUserName1, PartUserName2);
-                await firebaseHelperCompDetails.AddCompDetail(CompName, PartUserName1);
-                await firebaseHelperCompDetails.AddCompDetail(CompName, PartUserName2);
+                await firebaseHelperCompDetails.AddCompDetail(CompName, PartUserName1, PartUserName2, TargetNumber, DueDate);
+               
                 await Application.Current.MainPage.DisplayAlert("Success", "Competition successfully created", "OK");
 
             }
@@ -169,17 +171,6 @@ async private void newCompClickedDone(object obj)
                 await Application.Current.MainPage.DisplayAlert("Error", "Make sure the participants exist", "OK");
             }
 
-
-                        //compName = string.Empty;
-            //targetNumber = 0;
-            //partUserName1 = string.Empty;
-            //partUserName2 = string.Empty;
-            //await Application.Current.MainPage.DisplayAlert("Success", "Competition Added Successfully", "OK");
-            
-            
-            //var allCompetitions = await firebaseHelper.GetAllCompetitions();
-            
-            //lstPersons.ItemsSource = allCompeitions;
 
             await nav.PopAsync();
             await nav.PushAsync(new Views.Forms.CompetitionDetail());

@@ -11,7 +11,7 @@ using Firebase.Database;
 using BIM493_Project.HelperUser;
 using BIM493_Project.Model;
 using BIM493_Project.HelperCompDetails;
-
+using Xamarin.Essentials;
 
 namespace BIM493_Project.ViewModels.Forms
 {
@@ -49,6 +49,7 @@ namespace BIM493_Project.ViewModels.Forms
         {
             this.newCompCommand = new Command(this.newCompClickedDone);
             this.tempraryCommand = new Command(this.tempraryClicked);
+            newCompClickedDone(this);
 
         }
 
@@ -144,25 +145,32 @@ namespace BIM493_Project.ViewModels.Forms
         {
             // We need to save-send data here ?????
 
-
+            CompName = Preferences.Get("CompetitionName", null);
             INavigation nav = Application.Current.MainPage.Navigation;
             // Do something
+            
+            var compDetails = await firebaseHelperCompDetails.GetCompDetail(CompName);
+            PartUserName1 = compDetails.Participant1;
+            PartUserName2 = compDetails.Participant2;
+            WorkDone1 = compDetails.Work1;
+            WorkDone2 = compDetails.Work2;
+            
 
-            var participant1 = await firebaseHelperUser.GetUser(PartUserName1);
-            var participant2 = await firebaseHelperUser.GetUser(PartUserName2);
+            
 
-            if (participant1 != null && participant2 != null)
-            {
-                await firebaseHelper.AddCompetition(CompName, TargetNumber, DueDate, PartUserName1, PartUserName2);
-                await firebaseHelperCompDetails.AddCompDetail(CompName, PartUserName1);
-                await firebaseHelperCompDetails.AddCompDetail(CompName, PartUserName2);
-                await Application.Current.MainPage.DisplayAlert("Success", "Competition successfully created", "OK");
 
-            }
-            else
-            {
-                await Application.Current.MainPage.DisplayAlert("Error", "Make sure the participants exist", "OK");
-            }
+            //if (participant1 != null && participant2 != null)
+            //{
+            //    await firebaseHelper.AddCompetition(CompName, TargetNumber, DueDate, PartUserName1, PartUserName2);
+            //    await firebaseHelperCompDetails.AddCompDetail(CompName, PartUserName1, PartUserName2);
+
+            //    await Application.Current.MainPage.DisplayAlert("Success", "Competition successfully created", "OK");
+
+            //}
+            //else
+            //{
+            //    await Application.Current.MainPage.DisplayAlert("Error", "Make sure the participants exist", "OK");
+            //}
 
 
             //compName = string.Empty;
@@ -176,8 +184,8 @@ namespace BIM493_Project.ViewModels.Forms
 
             //lstPersons.ItemsSource = allCompeitions;
 
-            await nav.PopAsync();
-            await nav.PushAsync(new Views.Forms.CompetitionDetail());
+            //await nav.PopAsync();
+            //await nav.PushAsync(new Views.Forms.CompetitionDetail());
 
         }
 
